@@ -1,0 +1,231 @@
+/* ***** IMPORTS ***** */
+@font-face {
+    font-family: 'SEB Regular';
+    src: url('../fonts/SEBSansSerif-Regular.woff2');
+}
+
+@font-face {
+    font-family: 'SEB Thin';
+    src: url('../fonts/SEBSansSerif-Light.woff2');
+}
+
+@font-face {
+    font-family: 'SEB Bold';
+    src: url('../fonts/SEBSansSerif-Bold.woff2');
+}
+
+/* ***** VARIABLES ***** */
+:root {
+    /* ** COLORS ** */
+    --primary-color: #333;
+    --white-color: #fff;
+    --blue-color: rgb(56 , 128, 223);
+
+    /* ** HEIGHTS ** */
+    /* 6rem = 96px = 6*16px (16px = default font-size of the root element (<body>)) */
+    --view-height: 100vh;
+    --header-height: 6rem;
+    --sub-links-height: 6rem;
+}
+
+/* ***** BASIC RESET ***** */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ***** GENERAL SETTINGS ***** */
+ul {
+    list-style: none;
+}
+
+/* ***** UTILITIES ***** */
+.container {
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 3px;
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* ***** HEADER START ***** */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    height: var(--header-height);
+    width: 100%;
+    font-family: 'SEB Regular';
+    /* 1.1rem = 18px = 1.1*16px (16px = default font-size of the root element (<body>)) */
+    font-size: 1.1rem;
+    background-color: var(--white-color); 
+    z-index: 10;
+}
+
+/* ** MAIN NAVIGATION START ** */
+.navigation {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+}
+
+/* TODO: Ändra! Vi gör bara bilden mindre för lättare styling */
+.logo {
+    width: 96px;
+}
+
+.menu {
+    display: flex;
+    height: 100%;
+}
+
+.menu-item {
+    height: 100%;
+}
+
+.menu-item-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+/* ** MAIN NAVIGATION END ** */
+
+/* ** ACCESSIBILITY START ** */
+.accessibility-nav {
+    flex: 2;
+    height: 100%;
+}
+
+.access-menu {
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.access-menu-item {
+    height: 100%;
+    padding: 0 14px;
+}
+
+.access-menu-item-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.access-menu-item-link .far,
+.access-menu-item-link .fas {
+    margin-right: 8px;
+}
+/* ** ACCESSIBILITY END ** */
+/* ***** HEADER END ***** */
+
+/* ***** HERO START ***** */
+.hero {
+    position: relative;
+    top: var(--header-height);
+    /* calc() = calculate */
+    height: calc(var(--view-height) - var(--header-height));
+    min-height: 600px;
+    width: 100%;
+    background: url('https://seb.se/ImageVault/publishedmedia/ux8yr5d3nn0sv80et41v/GettyImages-899419456-tusch.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    font-family: 'SEB Thin';
+    color: var(--white-color);
+}
+
+/* TODO: FIX z-index
+.hero::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+*/
+
+.hero-content {
+    padding-top: 15%;
+}
+
+.hero-title {
+    margin-bottom: 40px;
+    font-size: 70px;
+    text-align: left;
+    z-index: 9;
+}
+
+.hero-text {
+    margin-bottom: 60px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.hero-link {
+    text-decoration: none;
+}
+
+.btn-showcase {
+    padding: 16px 30px;
+}
+/* ***** HERO END ***** */
+
+/* ***** SUB-LINKS START ***** */
+.sub-links {
+    position: relative;
+    height: var(--sub-links-height);
+    width: 100%;
+    font-family: 'SEB Thin';
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: #1a1a1a;
+}
+
+.sub-links-menu {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.sub-links-menu-item {
+    padding: 0 20px;
+}
+
+.sub-links-link {
+    color: var(--white-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+/* :nth-child(2) = <i>-element with the arrow-icon */
+.sub-links-link :nth-child(2) {
+    font-size: 0.9rem;
+}
+/* ***** SUB-LINKS END ***** */
